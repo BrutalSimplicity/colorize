@@ -1,0 +1,128 @@
+<html>
+<head><style>.colorize .hll { background-color: #ffffcc }
+.colorize  { background: #ffffff; }
+.colorize .c { color: #008000 } /* Comment */
+.colorize .err { border: 1px solid #FF0000 } /* Error */
+.colorize .k { color: #0000ff } /* Keyword */
+.colorize .ch { color: #008000 } /* Comment.Hashbang */
+.colorize .cm { color: #008000 } /* Comment.Multiline */
+.colorize .cp { color: #0000ff } /* Comment.Preproc */
+.colorize .cpf { color: #008000 } /* Comment.PreprocFile */
+.colorize .c1 { color: #008000 } /* Comment.Single */
+.colorize .cs { color: #008000 } /* Comment.Special */
+.colorize .ge { font-style: italic } /* Generic.Emph */
+.colorize .gh { font-weight: bold } /* Generic.Heading */
+.colorize .gp { font-weight: bold } /* Generic.Prompt */
+.colorize .gs { font-weight: bold } /* Generic.Strong */
+.colorize .gu { font-weight: bold } /* Generic.Subheading */
+.colorize .kc { color: #0000ff } /* Keyword.Constant */
+.colorize .kd { color: #0000ff } /* Keyword.Declaration */
+.colorize .kn { color: #0000ff } /* Keyword.Namespace */
+.colorize .kp { color: #0000ff } /* Keyword.Pseudo */
+.colorize .kr { color: #0000ff } /* Keyword.Reserved */
+.colorize .kt { color: #2b91af } /* Keyword.Type */
+.colorize .s { color: #a31515 } /* Literal.String */
+.colorize .nc { color: #2b91af } /* Name.Class */
+.colorize .ow { color: #0000ff } /* Operator.Word */
+.colorize .sb { color: #a31515 } /* Literal.String.Backtick */
+.colorize .sc { color: #a31515 } /* Literal.String.Char */
+.colorize .sd { color: #a31515 } /* Literal.String.Doc */
+.colorize .s2 { color: #a31515 } /* Literal.String.Double */
+.colorize .se { color: #a31515 } /* Literal.String.Escape */
+.colorize .sh { color: #a31515 } /* Literal.String.Heredoc */
+.colorize .si { color: #a31515 } /* Literal.String.Interpol */
+.colorize .sx { color: #a31515 } /* Literal.String.Other */
+.colorize .sr { color: #a31515 } /* Literal.String.Regex */
+.colorize .s1 { color: #a31515 } /* Literal.String.Single */
+.colorize .ss { color: #a31515 } /* Literal.String.Symbol */</style></head>
+<body>
+<h1 id="example1">Example 1</h1>
+
+<p>Here is an example of colorizer syntax highlighting the code blocks in an html file created from a markdown document.</p>
+
+<h2 id="python">Python</h2>
+
+<div class="colorize"><pre><span></span><span class="k">def</span> <span class="nf">luhn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">divmod</span><span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]))</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+<h2 id="c">C</h2>
+
+<div class="colorize"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">Luhn</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">cardNumber</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="n">cardNumber</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span> <span class="p">-</span> <span class="sc">'0'</span><span class="p">).</span><span class="n">ToArray</span><span class="p">());</span>
+        <span class="p">}</span>
+ 
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="k">this</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">digits</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">GetCheckValue</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+ 
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">GetCheckValue</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">digits</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">digits</span><span class="p">.</span><span class="n">Select</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">i</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="n">digits</span><span class="p">.</span><span class="n">Length</span> <span class="p">%</span> <span class="m">2</span> <span class="p">?</span> <span class="p">((</span><span class="m">2</span> <span class="p">*</span> <span class="n">d</span><span class="p">)</span> <span class="p">%</span> <span class="m">10</span><span class="p">)</span> <span class="p">+</span> <span class="n">d</span> <span class="p">/</span> <span class="m">5</span> <span class="p">:</span> <span class="n">d</span><span class="p">).</span><span class="n">Sum</span><span class="p">()</span> <span class="p">%</span> <span class="m">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+<h2 id="haskell">Haskell</h2>
+
+<div class="colorize"><pre><span></span><span class="kr">import</span> <span class="nn">Data.Char</span> <span class="p">(</span><span class="nf">digitToInt</span><span class="p">)</span>
+<span class="nf">luhn</span> <span class="ow">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span><span class="p">)</span> <span class="o">.</span> <span class="p">(`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">10</span><span class="p">)</span> <span class="o">.</span> <span class="n">sum</span> <span class="o">.</span> <span class="n">map</span> <span class="p">(</span><span class="n">uncurry</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">.</span> <span class="p">(`</span><span class="n">divMod</span><span class="p">`</span> <span class="mi">10</span><span class="p">))</span> <span class="o">.</span>
+       <span class="n">zipWith</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="n">cycle</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">.</span> <span class="n">map</span> <span class="n">digitToInt</span> <span class="o">.</span> <span class="n">reverse</span>
+</pre></div>
+<h2 id="clojure">Clojure</h2>
+
+<div class="colorize"><pre><span></span><span class="p">(</span><span class="kd">defn </span><span class="nv">count-substring</span> <span class="p">[</span><span class="nv">txt</span> <span class="nv">sub</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">count </span><span class="p">(</span><span class="nb">re-seq </span><span class="p">(</span><span class="nb">re-pattern </span><span class="nv">sub</span><span class="p">)</span> <span class="nv">txt</span><span class="p">)))</span>
+</pre></div>
+<h2 id="java">Java</h2>
+
+<div class="colorize"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CountSubstring</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">countSubstring</span><span class="o">(</span><span class="n">String</span> <span class="n">subStr</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">subStr</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="na">length</span><span class="o">())</span> <span class="o">/</span> <span class="n">subStr</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"th"</span><span class="o">,</span> <span class="s">"the three truths"</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"abab"</span><span class="o">,</span> <span class="s">"ababababab"</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"a*b"</span><span class="o">,</span> <span class="s">"abaabba*bbaba*bbab"</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+<h2 id="matlab">Matlab</h2>
+
+<div class="colorize"><pre><span></span><span class="c">% Count occurrences of a substring without overlap</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">ababababab</span>"<span class="p">,</span>"<span class="n">abab</span>"<span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">the</span> <span class="n">three</span> <span class="n">truths</span>"<span class="p">,</span>"<span class="n">th</span>"<span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c">% Count occurrences of a substring with overlap</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">ababababab</span>"<span class="p">,</span>"<span class="n">abab</span>"<span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+<h2 id="sass">Sass</h2>
+
+<div class="colorize"><pre><span></span><span class="nc">.container</span> <span class="err">{</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="na">article</span><span class="err">[</span><span class="na">role</span><span class="o">=</span><span class="s2">"main"</span><span class="p">]</span> <span class="err">{</span>
+  <span class="na">float</span><span class="o">:</span> <span class="no">left</span><span class="err">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">62</span><span class="mf">.5</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="na">aside</span><span class="err">[</span><span class="na">role</span><span class="o">=</span><span class="s2">"complementary"</span><span class="p">]</span> <span class="err">{</span>
+  <span class="na">float</span><span class="o">:</span> <span class="no">right</span><span class="err">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">31</span><span class="mf">.25</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+</pre></div>
+<h2 id="rust">Rust</h2>
+
+<div class="colorize"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="n">is_leap</span><span class="p">(</span><span class="n">year</span><span class="o">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">factor</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">factor</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="mi">400</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</body>
+</html>

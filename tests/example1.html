@@ -1,0 +1,95 @@
+<h1 id="example1">Example 1</h1>
+
+<p>Here is an example of colorizer syntax highlighting the code blocks in an html file created from a markdown document.</p>
+
+<h2 id="python">Python</h2>
+
+<pre><code class="python">def luhn(n):
+    r = [int(ch) for ch in str(n)][::-1]
+    return (sum(r[0::2]) + sum(sum(divmod(d*2,10)) for d in r[1::2])) % 10 == 0
+</code></pre>
+
+<h2 id="c">C</h2>
+
+<pre><code class="csharp">public static class Luhn
+    {
+        public static bool LuhnCheck(this string cardNumber)
+        {
+            return LuhnCheck(cardNumber.Select(c =&gt; c - '0').ToArray());
+        }
+ 
+        private static bool LuhnCheck(this int[] digits)
+        {
+            return GetCheckValue(digits) == 0;
+        }
+ 
+        private static int GetCheckValue(int[] digits)
+        {
+            return digits.Select((d, i) =&gt; i % 2 == digits.Length % 2 ? ((2 * d) % 10) + d / 5 : d).Sum() % 10;
+        }
+    }
+</code></pre>
+
+<h2 id="haskell">Haskell</h2>
+
+<pre><code class="haskell">import Data.Char (digitToInt)
+luhn = (0 ==) . (`mod` 10) . sum . map (uncurry (+) . (`divMod` 10)) .
+       zipWith (*) (cycle [1,2]) . map digitToInt . reverse
+</code></pre>
+
+<h2 id="clojure">Clojure</h2>
+
+<pre><code class="clojure">(defn count-substring [txt sub]
+  (count (re-seq (re-pattern sub) txt)))
+</code></pre>
+
+<h2 id="java">Java</h2>
+
+<pre><code class="java">public class CountSubstring {
+    public static int countSubstring(String subStr, String str){
+        return (str.length() - str.replace(subStr, &quot;&quot;).length()) / subStr.length();
+    }
+ 
+    public static void main(String[] args){
+        System.out.println(countSubstring(&quot;th&quot;, &quot;the three truths&quot;));
+        System.out.println(countSubstring(&quot;abab&quot;, &quot;ababababab&quot;));
+        System.out.println(countSubstring(&quot;a*b&quot;, &quot;abaabba*bbaba*bbab&quot;));
+    }
+}
+</code></pre>
+
+<h2 id="matlab">Matlab</h2>
+
+<pre><code class="matlab">% Count occurrences of a substring without overlap
+length(findstr(&quot;ababababab&quot;,&quot;abab&quot;,0))
+length(findstr(&quot;the three truths&quot;,&quot;th&quot;,0))
+
+% Count occurrences of a substring with overlap
+length(findstr(&quot;ababababab&quot;,&quot;abab&quot;,1))
+</code></pre>
+
+<h2 id="sass">Sass</h2>
+
+<pre><code class="sass">.container {
+  width: 100%;
+}
+
+article[role=&quot;main&quot;] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role=&quot;complementary&quot;] {
+  float: right;
+  width: 31.25%;
+}
+</code></pre>
+
+<h2 id="rust">Rust</h2>
+
+<pre><code class="rust">fn is_leap(year: i32) -&gt; bool {
+    let factor = |x| year % x == 0;
+    factor(4) &amp;&amp; (!factor(100) || factor(400))
+    }
+}
+</code></pre>

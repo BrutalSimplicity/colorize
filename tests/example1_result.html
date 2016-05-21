@@ -1,0 +1,249 @@
+<html>
+<head><style>.colorize .hll { background-color: #ffffcc }
+.colorize  { background: #f0f0f0; }
+.colorize .c { color: #60a0b0; font-style: italic } /* Comment */
+.colorize .err { border: 1px solid #FF0000 } /* Error */
+.colorize .k { color: #007020; font-weight: bold } /* Keyword */
+.colorize .o { color: #666666 } /* Operator */
+.colorize .ch { color: #60a0b0; font-style: italic } /* Comment.Hashbang */
+.colorize .cm { color: #60a0b0; font-style: italic } /* Comment.Multiline */
+.colorize .cp { color: #007020 } /* Comment.Preproc */
+.colorize .cpf { color: #60a0b0; font-style: italic } /* Comment.PreprocFile */
+.colorize .c1 { color: #60a0b0; font-style: italic } /* Comment.Single */
+.colorize .cs { color: #60a0b0; background-color: #fff0f0 } /* Comment.Special */
+.colorize .gd { color: #A00000 } /* Generic.Deleted */
+.colorize .ge { font-style: italic } /* Generic.Emph */
+.colorize .gr { color: #FF0000 } /* Generic.Error */
+.colorize .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.colorize .gi { color: #00A000 } /* Generic.Inserted */
+.colorize .go { color: #888888 } /* Generic.Output */
+.colorize .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.colorize .gs { font-weight: bold } /* Generic.Strong */
+.colorize .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.colorize .gt { color: #0044DD } /* Generic.Traceback */
+.colorize .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.colorize .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.colorize .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.colorize .kp { color: #007020 } /* Keyword.Pseudo */
+.colorize .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.colorize .kt { color: #902000 } /* Keyword.Type */
+.colorize .m { color: #40a070 } /* Literal.Number */
+.colorize .s { color: #4070a0 } /* Literal.String */
+.colorize .na { color: #4070a0 } /* Name.Attribute */
+.colorize .nb { color: #007020 } /* Name.Builtin */
+.colorize .nc { color: #0e84b5; font-weight: bold } /* Name.Class */
+.colorize .no { color: #60add5 } /* Name.Constant */
+.colorize .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.colorize .ni { color: #d55537; font-weight: bold } /* Name.Entity */
+.colorize .ne { color: #007020 } /* Name.Exception */
+.colorize .nf { color: #06287e } /* Name.Function */
+.colorize .nl { color: #002070; font-weight: bold } /* Name.Label */
+.colorize .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.colorize .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.colorize .nv { color: #bb60d5 } /* Name.Variable */
+.colorize .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.colorize .w { color: #bbbbbb } /* Text.Whitespace */
+.colorize .mb { color: #40a070 } /* Literal.Number.Bin */
+.colorize .mf { color: #40a070 } /* Literal.Number.Float */
+.colorize .mh { color: #40a070 } /* Literal.Number.Hex */
+.colorize .mi { color: #40a070 } /* Literal.Number.Integer */
+.colorize .mo { color: #40a070 } /* Literal.Number.Oct */
+.colorize .sb { color: #4070a0 } /* Literal.String.Backtick */
+.colorize .sc { color: #4070a0 } /* Literal.String.Char */
+.colorize .sd { color: #4070a0; font-style: italic } /* Literal.String.Doc */
+.colorize .s2 { color: #4070a0 } /* Literal.String.Double */
+.colorize .se { color: #4070a0; font-weight: bold } /* Literal.String.Escape */
+.colorize .sh { color: #4070a0 } /* Literal.String.Heredoc */
+.colorize .si { color: #70a0d0; font-style: italic } /* Literal.String.Interpol */
+.colorize .sx { color: #c65d09 } /* Literal.String.Other */
+.colorize .sr { color: #235388 } /* Literal.String.Regex */
+.colorize .s1 { color: #4070a0 } /* Literal.String.Single */
+.colorize .ss { color: #517918 } /* Literal.String.Symbol */
+.colorize .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.colorize .vc { color: #bb60d5 } /* Name.Variable.Class */
+.colorize .vg { color: #bb60d5 } /* Name.Variable.Global */
+.colorize .vi { color: #bb60d5 } /* Name.Variable.Instance */
+.colorize .il { color: #40a070 } /* Literal.Number.Integer.Long */</style></head>
+<body>
+<h1 id="example1">Example 1</h1>
+
+<p>Here is an example of colorizer syntax highlighting the code blocks in an html file created from a markdown document.</p>
+
+<h2 id="python">Python</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="k">def</span> <span class="nf">luhn</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)][::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">r</span><span class="p">[</span><span class="mi">0</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">divmod</span><span class="p">(</span><span class="n">d</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">r</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]))</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="c">C</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="k">public</span> <span class="k">static</span> <span class="k">class</span> <span class="nc">Luhn</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="k">this</span> <span class="kt">string</span> <span class="n">cardNumber</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="n">cardNumber</span><span class="p">.</span><span class="n">Select</span><span class="p">(</span><span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span> <span class="p">-</span> <span class="sc">'0'</span><span class="p">).</span><span class="n">ToArray</span><span class="p">());</span>
+        <span class="p">}</span>
+ 
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">bool</span> <span class="nf">LuhnCheck</span><span class="p">(</span><span class="k">this</span> <span class="kt">int</span><span class="p">[]</span> <span class="n">digits</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="nf">GetCheckValue</span><span class="p">(</span><span class="n">digits</span><span class="p">)</span> <span class="p">==</span> <span class="m">0</span><span class="p">;</span>
+        <span class="p">}</span>
+ 
+        <span class="k">private</span> <span class="k">static</span> <span class="kt">int</span> <span class="nf">GetCheckValue</span><span class="p">(</span><span class="kt">int</span><span class="p">[]</span> <span class="n">digits</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">return</span> <span class="n">digits</span><span class="p">.</span><span class="n">Select</span><span class="p">((</span><span class="n">d</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="n">i</span> <span class="p">%</span> <span class="m">2</span> <span class="p">==</span> <span class="n">digits</span><span class="p">.</span><span class="n">Length</span> <span class="p">%</span> <span class="m">2</span> <span class="p">?</span> <span class="p">((</span><span class="m">2</span> <span class="p">*</span> <span class="n">d</span><span class="p">)</span> <span class="p">%</span> <span class="m">10</span><span class="p">)</span> <span class="p">+</span> <span class="n">d</span> <span class="p">/</span> <span class="m">5</span> <span class="p">:</span> <span class="n">d</span><span class="p">).</span><span class="n">Sum</span><span class="p">()</span> <span class="p">%</span> <span class="m">10</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="haskell">Haskell</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="kr">import</span> <span class="nn">Data.Char</span> <span class="p">(</span><span class="nf">digitToInt</span><span class="p">)</span>
+<span class="nf">luhn</span> <span class="ow">=</span> <span class="p">(</span><span class="mi">0</span> <span class="o">==</span><span class="p">)</span> <span class="o">.</span> <span class="p">(`</span><span class="n">mod</span><span class="p">`</span> <span class="mi">10</span><span class="p">)</span> <span class="o">.</span> <span class="n">sum</span> <span class="o">.</span> <span class="n">map</span> <span class="p">(</span><span class="n">uncurry</span> <span class="p">(</span><span class="o">+</span><span class="p">)</span> <span class="o">.</span> <span class="p">(`</span><span class="n">divMod</span><span class="p">`</span> <span class="mi">10</span><span class="p">))</span> <span class="o">.</span>
+       <span class="n">zipWith</span> <span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="p">(</span><span class="n">cycle</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">.</span> <span class="n">map</span> <span class="n">digitToInt</span> <span class="o">.</span> <span class="n">reverse</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="clojure">Clojure</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="p">(</span><span class="kd">defn </span><span class="nv">count-substring</span> <span class="p">[</span><span class="nv">txt</span> <span class="nv">sub</span><span class="p">]</span>
+  <span class="p">(</span><span class="nb">count </span><span class="p">(</span><span class="nb">re-seq </span><span class="p">(</span><span class="nb">re-pattern </span><span class="nv">sub</span><span class="p">)</span> <span class="nv">txt</span><span class="p">)))</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="java">Java</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">CountSubstring</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">countSubstring</span><span class="o">(</span><span class="n">String</span> <span class="n">subStr</span><span class="o">,</span> <span class="n">String</span> <span class="n">str</span><span class="o">){</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">-</span> <span class="n">str</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="n">subStr</span><span class="o">,</span> <span class="s">""</span><span class="o">).</span><span class="na">length</span><span class="o">())</span> <span class="o">/</span> <span class="n">subStr</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+    <span class="o">}</span>
+ 
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"th"</span><span class="o">,</span> <span class="s">"the three truths"</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"abab"</span><span class="o">,</span> <span class="s">"ababababab"</span><span class="o">));</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">countSubstring</span><span class="o">(</span><span class="s">"a*b"</span><span class="o">,</span> <span class="s">"abaabba*bbaba*bbab"</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="matlab">Matlab</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="c">% Count occurrences of a substring without overlap</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">ababababab</span>"<span class="p">,</span>"<span class="n">abab</span>"<span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">the</span> <span class="n">three</span> <span class="n">truths</span>"<span class="p">,</span>"<span class="n">th</span>"<span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+
+<span class="c">% Count occurrences of a substring with overlap</span>
+<span class="nb">length</span><span class="p">(</span><span class="n">findstr</span><span class="p">(</span>"<span class="n">ababababab</span>"<span class="p">,</span>"<span class="n">abab</span>"<span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="sass">Sass</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="nc">.container</span> <span class="err">{</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="na">article</span><span class="err">[</span><span class="na">role</span><span class="o">=</span><span class="s2">"main"</span><span class="p">]</span> <span class="err">{</span>
+  <span class="na">float</span><span class="o">:</span> <span class="no">left</span><span class="err">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">62</span><span class="mf">.5</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="na">aside</span><span class="err">[</span><span class="na">role</span><span class="o">=</span><span class="s2">"complementary"</span><span class="p">]</span> <span class="err">{</span>
+  <span class="na">float</span><span class="o">:</span> <span class="no">right</span><span class="err">;</span>
+  <span class="na">width</span><span class="o">:</span> <span class="mi">31</span><span class="mf">.25</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="rust">Rust</h2>
+
+<table class="colorizetable"><tr>
+<td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td>
+<td class="code">
+<div class="colorize"><pre><span></span><span class="k">fn</span><span class="w"> </span><span class="n">is_leap</span><span class="p">(</span><span class="n">year</span><span class="o">:</span><span class="w"> </span><span class="kt">i32</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kt">bool</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="n">factor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">|</span><span class="n">x</span><span class="o">|</span><span class="w"> </span><span class="n">year</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">factor</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">factor</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="mi">400</span><span class="p">))</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</td>
+</tr></table>
+</body>
+</html>

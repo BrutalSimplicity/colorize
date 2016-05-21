@@ -1,0 +1,182 @@
+<html><body>
+<h1 id="example1">Example 1</h1>
+
+<p>Here is an example of colorizer syntax highlighting the code blocks in an html file created from a markdown document.</p>
+
+<h2 id="python">Python</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%">1
+2
+3</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">def</span> <span style="color: #06287e">luhn</span>(n):
+    r <span style="color: #666666">=</span> [<span style="color: #007020">int</span>(ch) <span style="color: #007020; font-weight: bold">for</span> ch <span style="color: #007020; font-weight: bold">in</span> <span style="color: #007020">str</span>(n)][::<span style="color: #666666">-</span><span style="color: #40a070">1</span>]
+    <span style="color: #007020; font-weight: bold">return</span> (<span style="color: #007020">sum</span>(r[<span style="color: #40a070">0</span>::<span style="color: #40a070">2</span>]) <span style="color: #666666">+</span> <span style="color: #007020">sum</span>(<span style="color: #007020">sum</span>(<span style="color: #007020">divmod</span>(d<span style="color: #666666">*</span><span style="color: #40a070">2</span>,<span style="color: #40a070">10</span>)) <span style="color: #007020; font-weight: bold">for</span> d <span style="color: #007020; font-weight: bold">in</span> r[<span style="color: #40a070">1</span>::<span style="color: #40a070">2</span>])) <span style="color: #666666">%</span> <span style="color: #40a070">10</span> <span style="color: #666666">==</span> <span style="color: #40a070">0</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="c">C</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">Luhn</span>
+    {
+        <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">bool</span> <span style="color: #06287e">LuhnCheck</span>(<span style="color: #007020; font-weight: bold">this</span> <span style="color: #902000">string</span> cardNumber)
+        {
+            <span style="color: #007020; font-weight: bold">return</span> <span style="color: #06287e">LuhnCheck</span>(cardNumber.Select(c =&gt; c - <span style="color: #4070a0">'0'</span>).ToArray());
+        }
+ 
+        <span style="color: #007020; font-weight: bold">private</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">bool</span> <span style="color: #06287e">LuhnCheck</span>(<span style="color: #007020; font-weight: bold">this</span> <span style="color: #902000">int</span>[] digits)
+        {
+            <span style="color: #007020; font-weight: bold">return</span> <span style="color: #06287e">GetCheckValue</span>(digits) == <span style="color: #40a070">0</span>;
+        }
+ 
+        <span style="color: #007020; font-weight: bold">private</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">int</span> <span style="color: #06287e">GetCheckValue</span>(<span style="color: #902000">int</span>[] digits)
+        {
+            <span style="color: #007020; font-weight: bold">return</span> digits.Select((d, i) =&gt; i % <span style="color: #40a070">2</span> == digits.Length % <span style="color: #40a070">2</span> ? ((<span style="color: #40a070">2</span> * d) % <span style="color: #40a070">10</span>) + d / <span style="color: #40a070">5</span> : d).Sum() % <span style="color: #40a070">10</span>;
+        }
+    }
+</pre></div>
+</td>
+</tr></table>
+<h2 id="haskell">Haskell</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%">1
+2
+3</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">import</span> <span style="color: #0e84b5; font-weight: bold">Data.Char</span> (<span style="color: #06287e">digitToInt</span>)
+<span style="color: #06287e">luhn</span> <span style="color: #007020; font-weight: bold">=</span> (<span style="color: #40a070">0</span> <span style="color: #666666">==</span>) <span style="color: #666666">.</span> (`mod` <span style="color: #40a070">10</span>) <span style="color: #666666">.</span> sum <span style="color: #666666">.</span> map (uncurry (<span style="color: #666666">+</span>) <span style="color: #666666">.</span> (`divMod` <span style="color: #40a070">10</span>)) <span style="color: #666666">.</span>
+       zipWith (<span style="color: #666666">*</span>) (cycle [<span style="color: #40a070">1</span>,<span style="color: #40a070">2</span>]) <span style="color: #666666">.</span> map digitToInt <span style="color: #666666">.</span> reverse
+</pre></div>
+</td>
+</tr></table>
+<h2 id="clojure">Clojure</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%">1
+2</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span>(<span style="color: #007020; font-weight: bold">defn </span><span style="color: #bb60d5">count-substring</span> [<span style="color: #bb60d5">txt</span> <span style="color: #bb60d5">sub</span>]
+  (<span style="color: #007020">count </span>(<span style="color: #007020">re-seq </span>(<span style="color: #007020">re-pattern </span><span style="color: #bb60d5">sub</span>) <span style="color: #bb60d5">txt</span>)))
+</pre></div>
+</td>
+</tr></table>
+<h2 id="java">Java</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">class</span> <span style="color: #0e84b5; font-weight: bold">CountSubstring</span> <span style="color: #666666">{</span>
+    <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">int</span> <span style="color: #06287e">countSubstring</span><span style="color: #666666">(</span>String subStr<span style="color: #666666">,</span> String str<span style="color: #666666">){</span>
+        <span style="color: #007020; font-weight: bold">return</span> <span style="color: #666666">(</span>str<span style="color: #666666">.</span><span style="color: #4070a0">length</span><span style="color: #666666">()</span> <span style="color: #666666">-</span> str<span style="color: #666666">.</span><span style="color: #4070a0">replace</span><span style="color: #666666">(</span>subStr<span style="color: #666666">,</span> <span style="color: #4070a0">""</span><span style="color: #666666">).</span><span style="color: #4070a0">length</span><span style="color: #666666">())</span> <span style="color: #666666">/</span> subStr<span style="color: #666666">.</span><span style="color: #4070a0">length</span><span style="color: #666666">();</span>
+    <span style="color: #666666">}</span>
+ 
+    <span style="color: #007020; font-weight: bold">public</span> <span style="color: #007020; font-weight: bold">static</span> <span style="color: #902000">void</span> <span style="color: #06287e">main</span><span style="color: #666666">(</span>String<span style="color: #666666">[]</span> args<span style="color: #666666">){</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>countSubstring<span style="color: #666666">(</span><span style="color: #4070a0">"th"</span><span style="color: #666666">,</span> <span style="color: #4070a0">"the three truths"</span><span style="color: #666666">));</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>countSubstring<span style="color: #666666">(</span><span style="color: #4070a0">"abab"</span><span style="color: #666666">,</span> <span style="color: #4070a0">"ababababab"</span><span style="color: #666666">));</span>
+        System<span style="color: #666666">.</span><span style="color: #4070a0">out</span><span style="color: #666666">.</span><span style="color: #4070a0">println</span><span style="color: #666666">(</span>countSubstring<span style="color: #666666">(</span><span style="color: #4070a0">"a*b"</span><span style="color: #666666">,</span> <span style="color: #4070a0">"abaabba*bbaba*bbab"</span><span style="color: #666666">));</span>
+    <span style="color: #666666">}</span>
+<span style="color: #666666">}</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="matlab">Matlab</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%">1
+2
+3
+4
+5
+6</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #60a0b0; font-style: italic">% Count occurrences of a substring without overlap</span>
+<span style="color: #007020">length</span>(findstr("ababababab","abab",<span style="color: #40a070">0</span>))
+<span style="color: #007020">length</span>(findstr("the three truths","th",<span style="color: #40a070">0</span>))
+
+<span style="color: #60a0b0; font-style: italic">% Count occurrences of a substring with overlap</span>
+<span style="color: #007020">length</span>(findstr("ababababab","abab",<span style="color: #40a070">1</span>))
+</pre></div>
+</td>
+</tr></table>
+<h2 id="sass">Sass</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #0e84b5; font-weight: bold">.container</span> <span style="border: 1px solid #FF0000">{</span>
+  <span style="color: #4070a0">width</span><span style="color: #666666">:</span> <span style="color: #40a070">100</span><span style="color: #902000">%</span><span style="border: 1px solid #FF0000">;</span>
+<span style="border: 1px solid #FF0000">}</span>
+
+<span style="color: #4070a0">article</span><span style="border: 1px solid #FF0000">[</span><span style="color: #4070a0">role</span><span style="color: #666666">=</span><span style="color: #4070a0">"main"</span>] <span style="border: 1px solid #FF0000">{</span>
+  <span style="color: #4070a0">float</span><span style="color: #666666">:</span> <span style="color: #60add5">left</span><span style="border: 1px solid #FF0000">;</span>
+  <span style="color: #4070a0">width</span><span style="color: #666666">:</span> <span style="color: #40a070">62.5</span><span style="color: #902000">%</span><span style="border: 1px solid #FF0000">;</span>
+<span style="border: 1px solid #FF0000">}</span>
+
+<span style="color: #4070a0">aside</span><span style="border: 1px solid #FF0000">[</span><span style="color: #4070a0">role</span><span style="color: #666666">=</span><span style="color: #4070a0">"complementary"</span>] <span style="border: 1px solid #FF0000">{</span>
+  <span style="color: #4070a0">float</span><span style="color: #666666">:</span> <span style="color: #60add5">right</span><span style="border: 1px solid #FF0000">;</span>
+  <span style="color: #4070a0">width</span><span style="color: #666666">:</span> <span style="color: #40a070">31.25</span><span style="color: #902000">%</span><span style="border: 1px solid #FF0000">;</span>
+<span style="border: 1px solid #FF0000">}</span>
+</pre></div>
+</td>
+</tr></table>
+<h2 id="rust">Rust</h2>
+
+<table class="colorizetable"><tr>
+<td><div class="linenodiv" style="background-color: #f0f0f0; padding-right: 10px"><pre style="line-height: 125%">1
+2
+3
+4
+5</pre></div></td>
+<td class="code">
+<div class="colorize" style="background: #f0f0f0"><pre style="line-height: 125%"><span></span><span style="color: #007020; font-weight: bold">fn</span><span style="color: #bbbbbb"> </span>is_leap(year<span style="color: #666666">:</span><span style="color: #bbbbbb"> </span><span style="color: #902000">i32</span>)<span style="color: #bbbbbb"> </span><span style="color: #666666">-&gt;</span><span style="color: #bbbbbb"> </span><span style="color: #902000">bool</span><span style="color: #bbbbbb"> </span>{<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span><span style="color: #007020; font-weight: bold">let</span><span style="color: #bbbbbb"> </span>factor<span style="color: #bbbbbb"> </span><span style="color: #666666">=</span><span style="color: #bbbbbb"> </span><span style="color: #666666">|</span>x<span style="color: #666666">|</span><span style="color: #bbbbbb"> </span>year<span style="color: #bbbbbb"> </span><span style="color: #666666">%</span><span style="color: #bbbbbb"> </span>x<span style="color: #bbbbbb"> </span><span style="color: #666666">==</span><span style="color: #bbbbbb"> </span><span style="color: #40a070">0</span>;<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span>factor(<span style="color: #40a070">4</span>)<span style="color: #bbbbbb"> </span><span style="color: #666666">&amp;&amp;</span><span style="color: #bbbbbb"> </span>(<span style="color: #666666">!</span>factor(<span style="color: #40a070">100</span>)<span style="color: #bbbbbb"> </span><span style="color: #666666">||</span><span style="color: #bbbbbb"> </span>factor(<span style="color: #40a070">400</span>))<span style="color: #bbbbbb"></span>
+<span style="color: #bbbbbb">    </span>}<span style="color: #bbbbbb"></span>
+}<span style="color: #bbbbbb"></span>
+</pre></div>
+</td>
+</tr></table>
+</body></html>
