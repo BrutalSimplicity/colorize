@@ -19,7 +19,7 @@ def colorize_node(node, formatter, lexer):
 
         # also possible this could be a table, hence the node()
         div_tree = code_tree.xpath('/html/body/node()[1]')[0]
-        
+
         # we need to find what tags to replace
         # if this is a <code> tag by itself, just replace the text
         # if it is a <code> tag that is the child of a <pre> tag, replace the pre node
@@ -119,7 +119,7 @@ def colorizer(plain_html, default='', style='default', border='', inline=False, 
 
             html_result = etree.tostring(tree, method='html', pretty_print=True)
         except Exception as e:
-            log.append('Error creating style script: ')
+            log.append('Error creating style script')
     else:
         html_result = html_hilite
 
@@ -151,31 +151,31 @@ if __name__ == '__main__':
 
     if args.list_styles:
         for style in get_all_styles():
-            print style
+            print(style)
         exit()
     if args.list_lexers:
         for lexer in get_all_lexers():
-            print lexer[0] + ' :: [' + str.join(', ', [alias for alias in lexer[1]]) + ']'
+            print(lexer[0] + ' :: [' + str.join(', ', [alias for alias in lexer[1]]) + ']')
         exit()
     if args.find_lexer:
         for lexer in get_all_lexers():
             if args.find_lexer in lexer[1]:
-                print lexer[0] + ' :: [' + str.join(', ', [alias for alias in lexer[1]]) + ']'
+                print(lexer[0] + ' :: [' + str.join(', ', [alias for alias in lexer[1]]) + ']')
                 exit()
-        print 'Lexer not found.'
+        print('Lexer not found.')
         exit()
 
     if not args.htmlfile:
-        print 'usage: colorize [options]'
-        print 'colorize: error: use \'colorizer -f htmlfile\' to colorize code in an html file, or -h for help'
+        print('usage: colorize [options]')
+        print('colorize: error: use \'colorizer -f htmlfile\' to colorize code in an html file, or -h for help')
         exit()
 
     if args.style and not args.style in get_all_styles():
-        print 'Style not found. Use --list_styles to see a list of available styles.'
+        print('Style not found. Use --list_styles to see a list of available styles.')
         exit()
 
     if args.default and not args.default in [a for l in get_all_lexers() for a in l[1]]:
-        print 'Default lexer not found. Use --list_lexers to see a list of available lexers.'
+        print('Default lexer not found. Use --list_lexers to see a list of available lexers.')
         exit()
 
     success = False
@@ -200,7 +200,7 @@ if __name__ == '__main__':
                     with open(args.out, 'w') as f:
                         f.write(html_hilite)
                 else:
-                    print html_hilite
+                    print(html_hilite)
 
                 if args.css_file:
                     with open(args.css_file, 'w') as fcss:
@@ -210,20 +210,20 @@ if __name__ == '__main__':
                     with open('log.txt', 'w') as flog:
                         flog.write(str.join(linesep, log))
 
-                print '%d code blocks colorized!' % (converted)
+                print('%d code blocks colorized!' % (converted))
                 if not args.default:
-                    print 'If the html output is not as expected try adding the --default option to specify a default lexer'
+                    print('If the html output is not as expected try adding the --default option to specify a default lexer')
             else:
 
                 if args.log:
                     with open('log.txt', 'w') as flog:
                         flog.write(str.join(linesep, log))
 
-                print 'Colorizer did not convert any code blocks. Use the --log switch to enable error logging.'
+                print('Colorizer did not convert any code blocks. Use the --log switch to enable error logging.')
                 if not args.default:
-                    print 'You also might try using the --default option to specify a default lexer'
+                    print('You also might try using the --default option to specify a default lexer')
 
     except IOError as e:
-        print 'An I/O error occurred: ' + e.strerror
+        print('An I/O error occurred: ' + e.strerror)
     except ParseError as e:
-        print 'An error occurred parsing the html document: ' + e.strerror
+        print('An error occurred parsing the html document: ')

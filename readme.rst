@@ -1,0 +1,1 @@
+Adds syntax highlighting to code embedded in html documents. In general, this is best used after generating html from Markdown, but should work on most html pages with code embedded in <pre> or <code> tags.

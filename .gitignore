@@ -1,2 +1,4 @@
 .idea
+htmlcov/
+.coverage
 log.txt
