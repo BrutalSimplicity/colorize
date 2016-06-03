@@ -1,9 +1,8 @@
 Colorizer
 =========
 
-Syntax highlighter for code blocks in html. The general use case is for converting code in mardown generated html documents, but should work for any code embedded in <pre> or <code> tags.
+Syntax highlighter for code blocks in html. The general use case is for converting code in mardown generated html documents, but should work for any code embedded in `<pre>` or `<code>` tags.
 
-# Installation
 
 # Usage
 
