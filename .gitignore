@@ -2,3 +2,4 @@
 htmlcov/
 .coverage
 log.txt
+*.pyc
