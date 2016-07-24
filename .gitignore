@@ -4,3 +4,4 @@ log.txt
 *.pyc
 /dist/
 /*.egg-info
+/build/
