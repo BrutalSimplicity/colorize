@@ -165,7 +165,9 @@ if __name__ == '__main__':
         print('Lexer not found.')
         exit()
 
-    if not args.htmlfile:
+    piped_input = sys.stdin.read() if not sys.stdin.isatty() else ''
+
+    if not args.htmlfile and not piped_input:
         print('usage: colorize [options]')
         print('colorize: error: use \'colorizer -f htmlfile\' to colorize code in an html file, or -h for help')
         exit()
@@ -184,44 +186,48 @@ if __name__ == '__main__':
     html_hilite = ''
     script = ''
     try:
-        with open(args.htmlfile) as f:
-            html = f.read()
-            inline_div = args.div_style if args.div_style else ''
-            if args.div_file:
-                with open(args.div_file) as fb:
-                    inline_div = fb.read()
+        if piped_input:
+            html = piped_input
+        else:
+            with open(args.htmlfile) as f:
+                html = f.read()
 
-            style = args.style if args.style else 'default'
-            default = args.default if args.default else ''
-            success, log, converted, html_hilite, script = colorizer(html, default, style, inline_div, args.inline, args.linenos)
+        inline_div = args.div_style if args.div_style else ''
+        if args.div_file:
+            with open(args.div_file) as fb:
+                inline_div = fb.read()
 
-            if success:
-                if args.out:
-                    with open(args.out, 'w') as f:
-                        f.write(html_hilite)
-                else:
-                    print(html_hilite)
+        style = args.style if args.style else 'default'
+        default = args.default if args.default else ''
+        success, log, converted, html_hilite, script = colorizer(html, default, style, inline_div, args.inline, args.linenos)
 
-                if args.css_file:
-                    with open(args.css_file, 'w') as fcss:
-                        fcss.write(script)
-
-                if args.log:
-                    with open('log.txt', 'w') as flog:
-                        flog.write(str.join(linesep, log))
-
-                print('%d code blocks colorized!' % (converted))
-                if not args.default:
-                    print('If the html output is not as expected try adding the --default option to specify a default lexer')
+        if success:
+            if args.out:
+                with open(args.out, 'w') as f:
+                    f.write(html_hilite)
             else:
+                print(html_hilite)
 
-                if args.log:
-                    with open('log.txt', 'w') as flog:
-                        flog.write(str.join(linesep, log))
+            if args.css_file:
+                with open(args.css_file, 'w') as fcss:
+                    fcss.write(script)
 
-                print('Colorizer did not convert any code blocks. Use the --log switch to enable error logging.')
-                if not args.default:
-                    print('You also might try using the --default option to specify a default lexer')
+            if args.log:
+                with open('log.txt', 'w') as flog:
+                    flog.write(str.join(linesep, log))
+
+            print('%d code blocks colorized!' % (converted))
+            if not args.default:
+                print('If the html output is not as expected try adding the --default option to specify a default lexer')
+        else:
+
+            if args.log:
+                with open('log.txt', 'w') as flog:
+                    flog.write(str.join(linesep, log))
+
+            print('Colorizer did not convert any code blocks. Use the --log switch to enable error logging.')
+            if not args.default:
+                print('You also might try using the --default option to specify a default lexer')
 
     except IOError as e:
         print('An I/O error occurred: ' + e.strerror)

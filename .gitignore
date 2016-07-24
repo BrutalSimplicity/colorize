@@ -1,5 +1,6 @@
 .idea
-htmlcov/
 .coverage
 log.txt
 *.pyc
+/dist/
+/*.egg-info
