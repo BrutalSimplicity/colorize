@@ -5,7 +5,7 @@ Syntax highlighter for detecting and highlighting code blocks in html. The gener
 
 You can pipe the output of markdown-generated html::
 
-  multimarkdown example1.md | python colorizer.py > example1.html
+  > multimarkdown example1.md | python colorizer.py > example1.html
 
 
 Styles
@@ -31,7 +31,7 @@ If you are using this with markdown, you will want to use one of the lexer names
   var x = new object();
   ```
 
-In this example `csharp` is one of the supported lexers, which you can check by querying it the `--find_lexer`.::
+In this example `csharp` is one of the supported lexers, which you can check by querying it with the `--find_lexer`.::
 
   > colorize-html --find_lexer cshar
   Lexer not found.
