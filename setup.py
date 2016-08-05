@@ -15,5 +15,5 @@ setup(name='pygments-colorizer',
       author_email='kory.taborn@gmail.com',
       license='MIT',
       packages=['pygments_colorizer'],
-      scripts=['bin/colorize-html'],
+      scripts=['bin/colorize-html.py'],
       zip_safe=False)
