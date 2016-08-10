@@ -5,7 +5,7 @@ Syntax highlighter for detecting and highlighting code blocks in html. The gener
 
 You can pipe the output of markdown-generated html::
 
-  > multimarkdown example1.md | python colorizer.py > example1.html
+  > multimarkdown example1.md | colorize-html > example1.html
 
 
 Styles
